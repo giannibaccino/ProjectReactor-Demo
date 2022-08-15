@@ -1,7 +1,9 @@
 package com.gianni;
 
 import com.gianni.model.Persona;
+import com.gianni.operador.combinacion.Combinacion;
 import com.gianni.operador.creacion.Creacion;
+import com.gianni.operador.error.ErrorOp;
 import com.gianni.operador.filtrado.Filtrado;
 import com.gianni.operador.transformacion.Transformacion;
 import io.reactivex.Observable;
@@ -67,8 +69,7 @@ public class DemoReactorApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Filtrado app = new Filtrado();
-		app.skip();
-		app.skipLast();
+		ErrorOp app = new ErrorOp();
+		app.errorMap();
 	}
 }
