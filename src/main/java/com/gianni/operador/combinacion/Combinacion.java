@@ -65,7 +65,7 @@ public class Combinacion {
     }
 
     //Igual que zip pero parte de un elemento de tipo flux en lugar de la clase Flux
-    public void zipWith(){
+    public void zipWith() throws InterruptedException {
         List<Persona> personas = new ArrayList<>();
         personas.add(new Persona(1, "Pepe", 23));
         personas.add(new Persona(2, "Gianni", 22));
@@ -83,7 +83,7 @@ public class Combinacion {
         Flux<Persona> fx2 = Flux.fromIterable(personas2);
         Flux<Venta> fx3 = Flux.fromIterable(ventas);
 
-        fx1.zipWith(fx2)
-                .subscribe(s -> log.info(s.toString()));
+        fx1.zipWith(fx2, (p1, p2) -> String.format("F1: %s , F2: %s ", p1, p2))
+                .subscribe(log::info);
     }
 }

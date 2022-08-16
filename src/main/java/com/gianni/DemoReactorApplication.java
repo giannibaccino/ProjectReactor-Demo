@@ -2,10 +2,8 @@ package com.gianni;
 
 import com.gianni.model.Persona;
 import com.gianni.operador.combinacion.Combinacion;
-import com.gianni.operador.creacion.Creacion;
-import com.gianni.operador.error.ErrorOp;
-import com.gianni.operador.filtrado.Filtrado;
-import com.gianni.operador.transformacion.Transformacion;
+import com.gianni.operador.condicional.Condicional;
+import com.gianni.operador.matematico.Matematico;
 import io.reactivex.Observable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,9 +65,10 @@ public class DemoReactorApplication implements CommandLineRunner {
 		SpringApplication.run(DemoReactorApplication.class, args);
 	}
 
+	//PRUEBAS AQUI
 	@Override
 	public void run(String... args) throws Exception {
-		ErrorOp app = new ErrorOp();
-		app.errorMap();
+		Matematico app = new Matematico();
+		app.summarizing();
 	}
 }
